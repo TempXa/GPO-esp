@@ -104,7 +104,6 @@ game.Workspace.PlayerCharacters.ChildAdded:Connect(function(part)
      end)
 end
 end
+end
 end)
 end
-end
-
