@@ -1,4 +1,4 @@
-if game.PlaceId == "11324731604" then
+
 
 game.Workspace.Effects.ChildAdded:Connect(function(part)
     
@@ -49,7 +49,6 @@ end
 end
 end)
 
-if game.PlaceId == "11324731604" then
 
  for __,v in pairs(game.Workspace.PlayerCharacters:GetChildren()) do
     
@@ -79,8 +78,7 @@ end)
 end
 end
 end
-end
-if game.PlaceId == "11324731604" then
+
 
 game.Workspace.PlayerCharacters.ChildAdded:Connect(function(part)
     if part:IsA("Model") then
@@ -105,5 +103,4 @@ game.Workspace.PlayerCharacters.ChildAdded:Connect(function(part)
      end)
 end
 end)
-end
-end
+
