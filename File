@@ -91,11 +91,9 @@ game.Workspace.PlayerCharacters.ChildAdded:Connect(function(part)
     b.BackgroundTransparency = 1
     b.BorderSizePixel = 0
     local c = Instance.new("TextLabel",b)
-    c.Text = part.Name
     c.Size = UDim2.new(1,0, 1,0)
     c.BackgroundTransparency = 1
-    c.BorderSizePixel = 0
-    c.Text = part.Name
+    c.BorderSizePixel = 0 
     c.TextColor3 = Color3.fromRGB(255, 255, 255)
     c.Text = part.Name.."\n".."\n"..math.floor(v.Humanoid.Health)
      v.Humanoid.HealthChanged:Connect(function()
