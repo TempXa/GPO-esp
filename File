@@ -53,6 +53,7 @@ end)
  for __,v in pairs(game.Workspace.PlayerCharacters:GetChildren()) do
     
     if v:IsA("Model") then
+    if not v:FindFirstChild("A") then
       
     local a = Instance.new("BillboardGui",v)
     a.Size = UDim2.new(1,0, 1,0)
@@ -82,6 +83,7 @@ end
 
 game.Workspace.PlayerCharacters.ChildAdded:Connect(function(part)
     if part:IsA("Model") then
+    if not part:FindFirstChild("A") then
       local a = Instance.new("BillboardGui",part)
     a.Size = UDim2.new(1,0, 1,0)
     a.Name = "A"
@@ -95,10 +97,11 @@ game.Workspace.PlayerCharacters.ChildAdded:Connect(function(part)
     c.BackgroundTransparency = 1
     c.BorderSizePixel = 0 
     c.TextColor3 = Color3.fromRGB(255, 255, 255)
-    c.Text = part.Name.."\n".."\n"..math.floor(part.Humanoid.Health)
+    c.Text = part.Name.."\n".."\n"..math.floor(part:WaitForChild("Humanoid").Health)
      part.Humanoid.HealthChanged:Connect(function()
     c.Text = part.Name.."\n".."\n"..math.floor(part.Humanoid.Health)
      end)
 end
+end
 end)
-
+end
