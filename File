@@ -97,9 +97,9 @@ game.Workspace.PlayerCharacters.ChildAdded:Connect(function(part)
     c.BorderSizePixel = 0
     c.Text = part.Name
     c.TextColor3 = Color3.fromRGB(255, 255, 255)
-    c.Text = v.Name.."\n".."\n"..math.floor(v.Humanoid.Health)
+    c.Text = part.Name.."\n".."\n"..math.floor(v.Humanoid.Health)
      v.Humanoid.HealthChanged:Connect(function()
-    c.Text = v.Name.."\n".."\n"..math.floor(v.Humanoid.Health)
+    c.Text = part.Name.."\n".."\n"..math.floor(v.Humanoid.Health)
      end)
 end
 end)
