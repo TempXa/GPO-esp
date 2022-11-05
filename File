@@ -1,5 +1,3 @@
-
-
 game.Workspace.Effects.ChildAdded:Connect(function(part)
     
     if part.Name == "Legendary Chest" or part.Name == "Mythical Chest" then
