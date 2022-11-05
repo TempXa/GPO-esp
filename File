@@ -1,0 +1,101 @@
+game.Workspace.Effects.ChildAdded:Connect(function(part)
+    
+    if part.Name == "Legendary Chest" or part.Name == "Mythical Chest" then
+    local a = Instance.new("BillboardGui",part)
+    a.Size = UDim2.new(1,0, 1,0)
+    a.Name = "A"
+    a.AlwaysOnTop = true
+    local b = Instance.new("Frame",a)
+    b.Size = UDim2.new(1,0, 1,0)
+    b.BackgroundTransparency = 1
+    b.BorderSizePixel = 0
+    local c = Instance.new("TextLabel",b)
+    c.Text = part.Name
+    c.Size = UDim2.new(1,0, 1,0)
+    c.BackgroundTransparency = 1
+    c.BorderSizePixel = 0
+    if part.Name == "Legendary Chest" then
+    c.TextColor3 = Color3.fromRGB(65, 243, 255)
+    elseif part.Name == "Mythical Chest" then
+         c.TextColor3 = Color3.fromRGB(216, 10, 209)
+                local GUI = Instance.new("ScreenGui")
+local Back = Instance.new("Frame")
+local Owner = game.Players.LocalPlayer
+local Menu = Instance.new("ScreenGui")
+local Frame = Instance.new("Frame")
+local Top = Instance.new("TextLabel")
+GUI.Parent = Owner.PlayerGui
+GUI.Name = "GameId"
+Top.Parent = GUI
+Top.Name = "Detector"
+Back.Parent = Top
+Back.Name = "Background"
+Top.Draggable = true
+    Top.Active = true
+    Top.Selectable = true
+Top.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+Top.Size = UDim2.new(0.2, 0.2, 0.05)
+Top.Position = UDim2.new(0.03, 0.4, 0.25)
+Top.TextColor3 = Color3.fromRGB(163, 163, 163)
+Top.Text = "Theres a Mythical Chest!!!"
+wait(3)
+GUI:Destroy()
+    else 
+        c.TextColor3 = Color3.fromRGB(243, 243, 12)
+
+end
+end
+end)
+
+ for __,v in pairs(game.Workspace.PlayerCharacters:GetChildren()) do
+    
+    if v:IsA("Model") then
+      
+    local a = Instance.new("BillboardGui",v)
+    a.Size = UDim2.new(1,0, 1,0)
+    a.Name = "A"
+    a.AlwaysOnTop = true
+    local b = Instance.new("Frame",a)
+    b.Size = UDim2.new(1,0, 1,0)
+    b.BackgroundTransparency = 1
+    b.BorderSizePixel = 0
+    local c = Instance.new("TextLabel",b)
+    c.Size = UDim2.new(1,0, 1,0)
+    c.BackgroundTransparency = 1
+    c.BorderSizePixel = 0
+     c.TextColor3 = Color3.fromRGB(255, 255, 255)
+    if v.Name == game.Players.LocalPlayer.Name then
+        v:WaitForChild("A"):Destroy()
+    else
+    c.Text = v.Name.."\n".."\n"..math.floor(v.Humanoid.Health)
+    v.Humanoid.HealthChanged:Connect(function()
+    c.Text = v.Name.."\n".."\n"..math.floor(v.Humanoid.Health)
+  
+end)
+end
+end
+end
+
+game.Workspace.PlayerCharacters.ChildAdded:Connect(function(part)
+    if part:IsA("Model") then
+      local a = Instance.new("BillboardGui",part)
+    a.Size = UDim2.new(1,0, 1,0)
+    a.Name = "A"
+    a.AlwaysOnTop = true
+    local b = Instance.new("Frame",a)
+    b.Size = UDim2.new(1,0, 1,0)
+    b.BackgroundTransparency = 1
+    b.BorderSizePixel = 0
+    local c = Instance.new("TextLabel",b)
+    c.Text = part.Name
+    c.Size = UDim2.new(1,0, 1,0)
+    c.BackgroundTransparency = 1
+    c.BorderSizePixel = 0
+    c.Text = part.Name
+    c.TextColor3 = Color3.fromRGB(255, 255, 255)
+    c.Text = v.Name.."\n".."\n"..math.floor(v.Humanoid.Health)
+     v.Humanoid.HealthChanged:Connect(function()
+    c.Text = v.Name.."\n".."\n"..math.floor(v.Humanoid.Health)
+     end)
+end
+end)
