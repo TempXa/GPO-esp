@@ -93,6 +93,7 @@ game.Workspace.PlayerCharacters.ChildAdded:Connect(function(part)
     c.TextColor3 = Color3.fromRGB(255, 255, 255)
      if part.Name == game.Players.LocalPlayer.Name then
         part:WaitForChild("A"):Destroy()
+        else
     c.Text = part.Name.."\n".."\n"..math.floor(part:WaitForChild("Humanoid").Health)
      part.Humanoid.HealthChanged:Connect(function()
     c.Text = part.Name.."\n".."\n"..math.floor(part.Humanoid.Health)
