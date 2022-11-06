@@ -1,6 +1,8 @@
+
+
 game.Workspace.Effects.ChildAdded:Connect(function(part)
     
-    if part.Name == "Legendary Chest" or part.Name == "Mythical Chest" then
+    if part.Name == "Legendary Chest" or part.Name == "Mythical Chest" or part.Name == "Rokushiki Medal" then
     local a = Instance.new("BillboardGui",part)
     a.Size = UDim2.new(1,0, 1,0)
     a.Name = "A"
@@ -95,15 +97,12 @@ game.Workspace.PlayerCharacters.ChildAdded:Connect(function(part)
     c.BackgroundTransparency = 1
     c.BorderSizePixel = 0 
     c.TextColor3 = Color3.fromRGB(255, 255, 255)
-    if part.Name == game.Players.LocalPlayer.Name then
-        part:WaitForChild("A"):Destroy()
-        else
     c.Text = part.Name.."\n".."\n"..math.floor(part:WaitForChild("Humanoid").Health)
      part.Humanoid.HealthChanged:Connect(function()
     c.Text = part.Name.."\n".."\n"..math.floor(part.Humanoid.Health)
      end)
 end
 end
-end
 end)
 end
+
