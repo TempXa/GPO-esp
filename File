@@ -1,5 +1,3 @@
-
-
 game.Workspace.Effects.ChildAdded:Connect(function(part)
     
     if part.Name == "Legendary Chest" or part.Name == "Mythical Chest" or part.Name == "Rokushiki Medal" then
@@ -44,12 +42,9 @@ wait(3)
 GUI:Destroy()
     else 
         c.TextColor3 = Color3.fromRGB(243, 243, 12)
-
 end
 end
 end)
-
-
  for __,v in pairs(game.Workspace.PlayerCharacters:GetChildren()) do
     
     if v:IsA("Model") then
@@ -74,7 +69,6 @@ end)
     c.Text = v.Name.."\n".."\n"..math.floor(v.Humanoid.Health)
     v.Humanoid.HealthChanged:Connect(function()
     c.Text = v.Name.."\n".."\n"..math.floor(v.Humanoid.Health)
-  
 end)
 end
 end
@@ -97,12 +91,14 @@ game.Workspace.PlayerCharacters.ChildAdded:Connect(function(part)
     c.BackgroundTransparency = 1
     c.BorderSizePixel = 0 
     c.TextColor3 = Color3.fromRGB(255, 255, 255)
+     if part.Name == game.Players.LocalPlayer.Name then
+        part:WaitForChild("A"):Destroy()
     c.Text = part.Name.."\n".."\n"..math.floor(part:WaitForChild("Humanoid").Health)
      part.Humanoid.HealthChanged:Connect(function()
     c.Text = part.Name.."\n".."\n"..math.floor(part.Humanoid.Health)
      end)
 end
 end
+end
 end)
 end
-
